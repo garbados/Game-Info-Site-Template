@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+	{{ project.title }}
+{% endblock %}
+{% block content %}
+<div class="span8 offset2">
+	{# project info #}
+	<header class="pull-center">
+		{% if project.img %}<img src="{{ url_for('static', filename=project.img) }}">{% endif %}
+		<h1>{{ project.title }}</h1>
+		<p><em>{{ project.description }}</em></p>
+	</header>
+
+	{# navbar! #}
+	<table data-spy="affix" data-offset-top="200" class="table">
+		{% for page in pages %}
+		<th><a href="#{{ page.path }}">{{ page.title }}</a></th>
+		{% endfor %}
+	</table>
+
+	{# copy :D #}
+	{% for page in pages %}
+	<section id="{{ page.path }}">
+		<header>
+			<h2>{{ page.title }}</h1>
+			{# <p><em>{{ page.description }}</em></p> #}
+		</header>
+		{{ page }}
+	</section>
+	{% endfor %}
+</div>
+{% endblock %}
