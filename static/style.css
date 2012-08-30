@@ -4751,3 +4751,12 @@ a.badge:hover {
 .pull-center {
   text-align: center;
 }
+.horizontal-nav {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+.horizontal-nav li {
+  float: left;
+  margin: 0 5px;
+}

@@ -19,12 +19,7 @@ assets.register('post_content_js', post_content)
 
 @app.route('/')
 def index():
-    return render_template('index.html', 
-               pages=[pages.get(page) for page in # determines page order
-                   ['hook', 'overview', 'howtoplay', 'details']
-               ], 
-               project=pages.get('meta')
-           )
+    return render_template('index.html', pages=pages._pages)
 
 ## MAIN ##
 if __name__ == '__main__':
